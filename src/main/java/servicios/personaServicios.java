@@ -28,7 +28,7 @@ public class personaServicios implements IPersonaS {
 	*/
 	public void add(Persona persona) {
 		
-		new personaDAO().add(persona);
+		new IPersona().add(persona);
 		
 	}
 	
@@ -37,7 +37,7 @@ public class personaServicios implements IPersonaS {
 	 */
 	public void delete(String nombre) {
 		
-		new personaDAO().delete(nombre);
+		new IPersona().delete(nombre);
 		
 	}
 	
@@ -46,7 +46,7 @@ public class personaServicios implements IPersonaS {
 	 */
 	public void update (Persona persona) {
 		
-		new personaDAO().update(persona);
+		new IPersona().update(persona);
 	}
 	
 	/*
@@ -54,7 +54,7 @@ public class personaServicios implements IPersonaS {
 	 */
 	public List<Persona> read(){
 		
-		return new personaDAO().listPerson();
+		return new IPersona().listPerson();
 	}
 	
 	
