@@ -17,8 +17,8 @@ public class Direccion {
 	private String direccion;
 	private String codpostal;
 	private String localidad;
-	private String idprovincia;
-	private String idpersona;
+	private int idprovincia;
+	private int idpersona;
 	/*
 	 * Constructor vacio
 	 */
@@ -30,8 +30,8 @@ public class Direccion {
 	/*
 	 * Constructor con parametros
 	 */
-	public Direccion(int iddireccion, String direccion, String codpostal, String localidad, String idprovincia,
-			String idpersona) {
+	public Direccion(int iddireccion, String direccion, String codpostal, String localidad, int idprovincia,
+			int idpersona) {
 		super();
 		this.iddireccion = iddireccion;
 		this.direccion = direccion;
@@ -109,7 +109,7 @@ public class Direccion {
 	 *  Método de acceso a la provincia
 	 *  @return devuelve la provincia
 	 */
-	public String getIdprovincia() {
+	public int getIdprovincia() {
 		return idprovincia;
 	}
 
@@ -117,7 +117,7 @@ public class Direccion {
 	 * Método de acceso para modificar el id de la provincia
 	 * @param dato por el que cambiaremos el id de la provincia
 	 */
-	public void setIdprovincia(String idprovincia) {
+	public void setIdprovincia(int idprovincia) {
 		this.idprovincia = idprovincia;
 	}
 
@@ -125,7 +125,7 @@ public class Direccion {
 	 *  Método de acceso al id de la persona
 	 *  @return devuelve el id de la persona
 	 */
-	public String getIdpersona() {
+	public int getIdpersona() {
 		return idpersona;
 	}
 
@@ -133,7 +133,7 @@ public class Direccion {
 	 * Método de acceso para modificar el id de la persona
 	 * @param dato por el que cambiaremos el id de la persona
 	 */
-	public void setIdpersona(String idpersona) {
+	public void setIdpersona(int idpersona) {
 		this.idpersona = idpersona;
 	}
 

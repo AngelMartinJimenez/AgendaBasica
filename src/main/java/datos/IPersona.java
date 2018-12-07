@@ -1,24 +1,33 @@
 package datos;
 
+import java.time.LocalDate;
 import java.util.List;
 import modelo.Persona;
 
 public interface IPersona {
 	
-	public List<Persona> listarTabla();
+	
 
 	public Persona read (int id);
 	
-	public Persona add (String nombre);
+	public void add (String nombre);
 	
-	public Persona delete (String nombre);
+	public void delete (String nombre);
 	
-	public Persona update (Persona persona);
-
-	public List<Persona> buscarNombre(String nombre);
+	public void update (Persona persona);
+	
+	public void updateName (int id,String nombre);
+	
+	public void updateLastName1 (int id,String apellido1);
+	
+	public void updateLastName2 (int id,String apellido2);
+	
+	public void updateDNI (int id,String dni);
+	
+	public void updateBirthDay (int id,LocalDate localDate);
+	
+	public List<Persona> listPersons();
 		
-	public List<Persona> categoria();
-	    
-	public List<Persona> listarTabla(String group);
+	
 
 }
