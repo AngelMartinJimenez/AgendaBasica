@@ -7,7 +7,13 @@ public interface IPersona {
 	
 	public List<Persona> listarTabla();
 
-	public Persona buscarPersona(int id);
+	public Persona read (int id);
+	
+	public Persona add (String nombre);
+	
+	public Persona delete (String nombre);
+	
+	public Persona update (Persona persona);
 
 	public List<Persona> buscarNombre(String nombre);
 		
