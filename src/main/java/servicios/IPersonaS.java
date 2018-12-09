@@ -5,6 +5,5 @@ import modelo.Persona;
 
 public interface IPersonaS {
 
-
 	
 }

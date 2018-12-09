@@ -25,9 +25,9 @@ public class PersonaDAO implements IPersona {
 	 * Método para añadir una persona de la BBDD
 	 */
 	@Override
-	public void add(String nombre) {
+	public void add(Persona person) {
 
-		entityManager.merge(nombre);
+		entityManager.merge(person);
 
 	}
 	

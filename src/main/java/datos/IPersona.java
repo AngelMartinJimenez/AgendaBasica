@@ -10,7 +10,7 @@ public interface IPersona {
 
 	public Persona read (int id);
 	
-	public void add (String nombre);
+	public void add (Persona person);
 	
 	public void delete (int id);
 	
