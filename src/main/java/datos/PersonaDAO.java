@@ -34,9 +34,9 @@ public class PersonaDAO implements IPersona {
 	/**
 	 * Método para borrar una persona de la BBDD
 	 */
-	public void delete(String nombre) {
+	public void delete(int id) {
 
-		String hql = "DELETE Persona WHERE nombre= '" + nombre + "'";
+		String hql = "DELETE Persona WHERE idpersona= '" + id + "'";
 
 		entityManager.createQuery(hql);
 

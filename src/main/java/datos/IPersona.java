@@ -12,7 +12,7 @@ public interface IPersona {
 	
 	public void add (String nombre);
 	
-	public void delete (String nombre);
+	public void delete (int id);
 	
 	public void update (Persona persona);
 	
