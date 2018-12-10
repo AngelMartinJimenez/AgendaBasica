@@ -22,15 +22,21 @@ public class PersonaServicios implements IPersonaS {
 	
 	@Autowired
 	
-	private IPersonaS PersonaServicios;
+	/*
+	 * Llamamos a la parte de datos
+	 */
+	private IPersona PersonaDAO;
 	/**
 	 * 
 	@param: pasamos un objeto persona para añadirlo
 	
 	*/
+	/*
+	 * No creamos el objeto porque ya lo hemos creado arriba
+	 */
 	public void add(Persona persona) {
 		
-		new PersonaServicios().add(persona);
+		PersonaDAO.add(persona);
 		
 	}
 	
@@ -39,7 +45,7 @@ public class PersonaServicios implements IPersonaS {
 	 */
 	public void delete(String nombre) {
 		
-		new PersonaServicios().delete(nombre);
+		PersonaDAO.delete(nombre);
 		
 	}
 	
@@ -48,7 +54,7 @@ public class PersonaServicios implements IPersonaS {
 	 */
 	public void update (Persona persona) {
 		
-		new PersonaServicios().update(persona);
+		PersonaDAO.update(persona);
 	}
 	
 	/*
@@ -56,7 +62,7 @@ public class PersonaServicios implements IPersonaS {
 	 */
 	public List<Persona> read(){
 		
-		return new PersonaServicios().listPerson();
+		return PersonaDAO.listPerson();
 	}
 	
 	
