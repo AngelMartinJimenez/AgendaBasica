@@ -1,5 +1,6 @@
 package servicios;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -54,10 +55,54 @@ public class PersonaServicios implements IPersonaS {
 	/*
 	 * Realizamos metodo para listar personas
 	 */
-	public List<Persona> read(){
+	
+	
+	public Persona read(int id){
 		
+		return PersonaDAO.read(id);
+	}
+
+	@Override
+	public void updateName(int id, String nombre) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateLastName1(int id, String apellido1) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateLastName2(int id, String apellido2) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateDNI(int id, String dni) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateBirthDay(int id, LocalDate localDate) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<Persona> listPersons() {
+		// TODO Auto-generated method stub
 		return PersonaDAO.listPersons();
 	}
+
+	
+
+
+
+	
 	
 	
 	
