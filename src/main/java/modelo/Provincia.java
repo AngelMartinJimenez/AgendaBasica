@@ -1,9 +1,14 @@
 package modelo;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /*
@@ -18,8 +23,11 @@ public class Provincia {
 	@Id
 	@GeneratedValue
 	@Column(name = "idprovincia")
-	private int iddireccion;
+	private int idprovincia;
 	private String provincia;
+	
+	@OneToMany( cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Direccion> listDirecciones = new ArrayList<>();
 	
 	/*
 	 * Constructor vacio
@@ -33,7 +41,7 @@ public class Provincia {
 	 */
 	public Provincia(int iddireccion, String provincia) {
 		super();
-		this.iddireccion = iddireccion;
+		this.idprovincia = iddireccion;
 		this.provincia = provincia;
 	}
 	
@@ -42,7 +50,7 @@ public class Provincia {
 	 *  @return devuelve el id de la direccion
 	 */
 	public int getIddireccion() {
-		return iddireccion;
+		return idprovincia;
 	}
 	
 	/*
@@ -50,7 +58,7 @@ public class Provincia {
 	 * @param dato por el que cambiaremos el id de la direccion
 	 */
 	public void setIddireccion(int iddireccion) {
-		this.iddireccion = iddireccion;
+		this.idprovincia = iddireccion;
 	}
 	
 	/*
@@ -77,7 +85,7 @@ public class Provincia {
 	 */
 	@Override
 	public String toString() {
-		return "Provincia [iddireccion=" + iddireccion + ", provincia=" + provincia + "]";
+		return "Provincia [iddireccion=" + idprovincia + ", provincia=" + provincia + "]";
 	}
 	
 	

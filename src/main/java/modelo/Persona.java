@@ -42,14 +42,11 @@ public class Persona {
 	@DateTimeFormat(pattern = "yyyy.MM.dd")
 	private LocalDate fechanacimiento;
 	
+	@OneToMany( cascade = CascadeType.ALL, orphanRemoval = true)
+	    private List<Direccion> listDirecciones = new ArrayList<>();
 	
-	@OneToMany(mappedBy = "persona")
-	List<Direccion> direcciones = new ArrayList<>();
-
-	@OneToMany(mappedBy = "persona")
-	List<Telefono> telefonos = new ArrayList<>();
-
-	
+	@OneToMany( cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Telefono> listTelefonos = new ArrayList<>();
 	
 	/**
 	 * Contructor vacío
@@ -179,39 +176,6 @@ public class Persona {
 		this.fechanacimiento = fechanacimiento;
 	}
 	
-	
-	/**
-	 * Método de acceso a la/las direcciones
-	 * @return
-	 */
-	public List<Direccion> getDirecciones() {
-		return direcciones;
-	}
-	
-	/**
-	 * Método de acceso para modificar la/las direcciones
-	 * @param direcciones
-	 */
-	public void setDirecciones(List<Direccion> direcciones) {
-		this.direcciones = direcciones;
-	}
-	
-	/**
-	 * Método de acceso al/los teléfonos
-	 * @return
-	 */
-	public List<Telefono> getTelefonos() {
-		return telefonos;
-	}
-	
-	/**
-	 * Método de acceso para modificar el/los teléfonos
-	 * @param telefonos
-	 */
-	public void setTelefonos(List<Telefono> telefonos) {
-		this.telefonos = telefonos;
-	}
-
 	/**
 	 * ToString de la clase Persona
 	 */
