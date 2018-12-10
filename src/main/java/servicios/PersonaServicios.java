@@ -1,5 +1,7 @@
 package servicios;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 /**
@@ -16,11 +18,11 @@ import modelo.Persona;
 @Service
 @Transactional
 
-public class personaServicios implements IPersonaS {
+public class PersonaServicios implements IPersonaS {
 	
 	@Autowired
 	
-	private IPersona personaDAO;
+	private IPersona PersonaDAO;
 	/**
 	 * 
 	@param: pasamos un objeto persona para añadirlo
@@ -28,16 +30,16 @@ public class personaServicios implements IPersonaS {
 	*/
 	public void add(Persona persona) {
 		
-		new IPersona().add(persona);
+		PersonaDAO.add(persona);
 		
 	}
 	
 	/*
 	 * @param: pasamos el nombre de tipo string para borrar el usuario
 	 */
-	public void delete(String nombre) {
+	public void delete(int id) {
 		
-		new IPersona().delete(nombre);
+		PersonaDAO.delete(id);
 		
 	}
 	
@@ -46,7 +48,7 @@ public class personaServicios implements IPersonaS {
 	 */
 	public void update (Persona persona) {
 		
-		new IPersona().update(persona);
+		PersonaDAO.update(persona);
 	}
 	
 	/*
@@ -54,7 +56,7 @@ public class personaServicios implements IPersonaS {
 	 */
 	public List<Persona> read(){
 		
-		return new IPersona().listPerson();
+		return PersonaDAO.listPersons();
 	}
 	
 	
