@@ -1,8 +1,8 @@
-package servicios;
+package com.agenda.app.AgendaBasica.servicios;
 
 import java.time.LocalDate;
 import java.util.List;
-import modelo.Persona;
+import com.agenda.app.AgendaBasica.modelo.Persona;
 
 public interface IPersonaS {
 	

@@ -1,4 +1,4 @@
-package servicios;
+package com.agenda.app.AgendaBasica.servicios;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -13,8 +13,8 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import datos.IPersona;
-import modelo.Persona;
+import com.agenda.app.AgendaBasica.datos.IPersona;
+import com.agenda.app.AgendaBasica.modelo.Persona;
 
 @Service
 @Transactional

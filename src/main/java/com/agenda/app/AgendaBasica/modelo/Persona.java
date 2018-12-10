@@ -1,4 +1,4 @@
-package modelo;
+package com.agenda.app.AgendaBasica.modelo;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -78,6 +78,8 @@ public class Persona {
 		//this.direcciones = direcciones;
 		//this.telefonos = telefonos;
 	}
+	
+	
 
 
 	/**

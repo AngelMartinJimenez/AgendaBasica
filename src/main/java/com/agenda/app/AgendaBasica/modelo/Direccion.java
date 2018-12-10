@@ -1,4 +1,4 @@
-package modelo;
+package com.agenda.app.AgendaBasica.modelo;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

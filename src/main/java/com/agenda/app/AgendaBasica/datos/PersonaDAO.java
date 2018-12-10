@@ -1,4 +1,4 @@
-package datos;
+package com.agenda.app.AgendaBasica.datos;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -9,7 +9,7 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import modelo.Persona;
+import com.agenda.app.AgendaBasica.modelo.Persona;
 
 /**
  * 
@@ -137,7 +137,8 @@ public class PersonaDAO implements IPersona {
 	public List<Persona> listPersons() {
 		
 		String hql = "FROM Persona";
-		return (List<Persona>) entityManager.createQuery(hql).getResultList();
+		List<Persona>  lista= entityManager.createQuery(hql).getResultList();
+		return lista;
 	}
 
 }

@@ -5,8 +5,6 @@ import java.util.List;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import datos.PersonaDAO;
-import modelo.Persona;
 
 @SpringBootApplication
 public class AgendaBasicaApplication {
@@ -14,12 +12,14 @@ public class AgendaBasicaApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(AgendaBasicaApplication.class, args);
 		
-		
+		/*
 		List <Persona> milista = new PersonaDAO().listPersons();
 		
 		for(Persona elemento : milista) {
 			System.out.println(elemento.toString());
 		}
+		*/
+		
 		
 		
 		

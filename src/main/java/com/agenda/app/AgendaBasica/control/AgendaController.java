@@ -1,4 +1,4 @@
-package control;
+package com.agenda.app.AgendaBasica.control;
 
 import java.util.List;
 
@@ -15,8 +15,8 @@ import org.springframework.web.servlet.ModelAndView;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import modelo.Persona;
-import servicios.IPersonaS;
+import com.agenda.app.AgendaBasica.modelo.Persona;
+import com.agenda.app.AgendaBasica.servicios.IPersonaS;
 
 @Controller
 public class AgendaController {
@@ -28,8 +28,9 @@ public class AgendaController {
 
 		@RequestMapping("/")
 		public ModelAndView handleRequest() throws Exception {
-			logger.info("-- en Listado");		
+			logger.info("-- en Listado ASR");		
 			List<Persona> listUsers = PersonaServicios.listPersons();
+			logger.info("---"+listUsers);
 			ModelAndView model = new ModelAndView("UserList");
 			model.addObject("userList", listUsers);
 			return model;

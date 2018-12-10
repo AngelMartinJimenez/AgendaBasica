@@ -1,4 +1,4 @@
-package modelo;
+package com.agenda.app.AgendaBasica.modelo;
 
 import java.util.ArrayList;
 import java.util.List;

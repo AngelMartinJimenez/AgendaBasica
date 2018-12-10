@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import control.AgendaController;
+import com.agenda.app.AgendaBasica.control.AgendaController;
 
 /*
  * Autowired es interpretado por Spring. El controlador es inyectado antes de que se ejecute el metodo del test
@@ -20,7 +20,7 @@ import control.AgendaController;
 public class AgendaBasicaApplicationTests {
 
 	 @Autowired
-	    private AgendaController controller;
+	private AgendaController controller;
 	 
 	@Test
 	
