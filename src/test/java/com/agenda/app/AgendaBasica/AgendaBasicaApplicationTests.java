@@ -32,5 +32,14 @@ public class AgendaBasicaApplicationTests {
         //Para asegurar que falla elimina la linea del controlador
         //    @Controller
     }
+	
+	 @Test
+	    public void contextLoads() throws Exception {
+	    	//Deberia fallar
+	    	assertThat(false).isFalse();
+	    }
+	 
+	 
+
 
 }
