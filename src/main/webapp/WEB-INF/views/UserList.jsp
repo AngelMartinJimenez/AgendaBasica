@@ -24,7 +24,7 @@
 
 		<table border="1">
 		<tr>
-			<th>Nº</th>
+			<th>Nï¿½</th>
 			<th>Usuario</th>
 			<th>Email</th>
 			<th>Acciones</th>
@@ -37,6 +37,7 @@
 					<td>${user.nombre}</td>
 					<td><a href="edit?id=${user.idpersona}">Modificar</a>
 						&nbsp;&nbsp;&nbsp;&nbsp; <a href="delete?id=${user.idpersona}">Eliminar</a>
+
 					</td>
 				</tr>
 			</c:forEach>
