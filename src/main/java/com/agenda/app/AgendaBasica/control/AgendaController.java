@@ -56,6 +56,7 @@ public class AgendaController {
 			logger.info("-- en EDIT");
 			int userId = Integer.parseInt(request.getParameter("id"));
 			Persona user = PersonaServicios.read(userId);
+			logger.info(user.toString());
 			ModelAndView model = new ModelAndView("UserForm");
 			model.addObject("user", user);
 			return model;		
@@ -72,6 +73,7 @@ public class AgendaController {
 		@RequestMapping(value = "/save", method = RequestMethod.POST)
 		public ModelAndView saveUser(@ModelAttribute Persona user) {
 			logger.info("-- en SAVE");
+			logger.info(user.getFechanacimiento().toString());
 			PersonaServicios.add(user);
 			return new ModelAndView("redirect:/");
 		}

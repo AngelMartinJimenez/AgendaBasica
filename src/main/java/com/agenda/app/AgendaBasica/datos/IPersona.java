@@ -73,7 +73,7 @@ public interface IPersona {
 	 * @param id
 	 * @param localDate
 	 */
-	public void updateBirthDay (int id,LocalDate localDate);
+	//public void updateBirthDay (int id,LocalDate localDate);
 	
 	/**
 	 * Metodo para listar todas las personas

@@ -1,5 +1,6 @@
 package com.agenda.app.AgendaBasica.datos;
 
+import java.sql.Date;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -50,7 +51,7 @@ public class PersonaDAO implements IPersona {
 
 		//return entityManager.find(Persona.class, id);
 		
-		String hql = "FROM Persona WHERE idpersona="+id;
+		String hql = "FROM Persona WHERE idpersona='"+id+"'";
 		return (Persona) entityManager.createQuery(hql).getResultList().get(0);
 	}
 
@@ -66,7 +67,7 @@ public class PersonaDAO implements IPersona {
 		person.setApellido1(persona.getApellido1());
 		person.setApellido2(persona.getApellido2());
 		person.setDni(persona.getDni());
-		person.setFechanacimiento(persona.getFechanacimiento());
+		person.setFechanacimiento(persona.getFechanacimiento().toString());
 
 		entityManager.flush();
 	}
@@ -121,13 +122,13 @@ public class PersonaDAO implements IPersona {
 	/**
 	 * Método para sólo actualizar la fecha de nacimiento de una persona en la BBDD
 	 */
-	@Override
-	public void updateBirthDay(int id,LocalDate localDate) {
+	//@Override
+	/*public void updateBirthDay(int id,Date date) {
 		Persona person = read(id);
 
-		person.setFechanacimiento(localDate);
+		person.setFechanacimiento(date);
 
-	}
+	}*/
 	
 	/**
 	 * Método para listar las personas existentes en la BBDD

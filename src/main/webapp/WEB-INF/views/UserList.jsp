@@ -1,5 +1,5 @@
-<%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 
@@ -24,19 +24,25 @@
 
 		<table border="1">
 		<tr>
-			<th>Nï¿½</th>
+			<th>Nº</th>
 			<th>Usuario</th>
-			<th>Email</th>
+			<th>Primer Apellido</th>
+			<th>Segundo Apellido</th>
+			<th>DNI</th>
+			<th>Fecha Nacimiento</th>
 			<th>Acciones</th>
 			</tr>
 
 			<c:forEach var="user" items="${userList}" varStatus="status">
 				<tr>
-					<td>${status.index + 1}</td>
 					<td>${user.idpersona}</td>
 					<td>${user.nombre}</td>
+					<td>${user.apellido1}</td>
+					<td>${user.apellido2}</td>
+					<td>${user.dni}</td>
+					<td>${user.fechanacimiento}</td>
 					<td><a href="edit?id=${user.idpersona}">Modificar</a>
-						&nbsp;&nbsp;&nbsp;&nbsp; <a href="delete?id=${user.idpersona}">Eliminar</a>
+						&nbsp;&nbsp;|&nbsp;&nbsp;  <a href="delete?id=${user.idpersona}">Eliminar</a>
 
 					</td>
 				</tr>
