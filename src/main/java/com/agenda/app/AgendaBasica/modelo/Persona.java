@@ -1,17 +1,11 @@
 package com.agenda.app.AgendaBasica.modelo;
 
 import java.sql.Date;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -40,14 +34,14 @@ public class Persona {
 	private String apellido1;
 	private String apellido2;
 	private String dni;
-	@DateTimeFormat(pattern = "yyyy.MM.dd")
-	private Date fechanacimiento;
+	//@DateTimeFormat(pattern = "yyyy.MM.dd")
+	private String fechanacimiento;
 	
-	@OneToMany( cascade = CascadeType.ALL, orphanRemoval = true)
+	/*@OneToMany( cascade = CascadeType.ALL, orphanRemoval = true)
 	    private List<Direccion> listDirecciones = new ArrayList<>();
 	
 	@OneToMany( cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Telefono> listTelefonos = new ArrayList<>();
+    private List<Telefono> listTelefonos = new ArrayList<>();*/
 	
 	/**
 	 * Contructor vacío
@@ -75,7 +69,8 @@ public class Persona {
 		this.apellido1 = apellido1;
 		this.apellido2 = apellido2;
 		this.dni = dni;
-		this.fechanacimiento = Date.valueOf(fechanacimiento);
+		this.fechanacimiento = fechanacimiento;
+		//this.fechanacimiento = Date.valueOf(fechanacimiento);
 		//this.direcciones = direcciones;
 		//this.telefonos = telefonos;
 	}
@@ -167,7 +162,7 @@ public class Persona {
 	 * Método de acceso a la fecha de nacimiento
 	 * @return
 	 */
-	public Date getFechanacimiento() {
+	public String getFechanacimiento() {
 		return fechanacimiento;
 	}
 
@@ -176,7 +171,8 @@ public class Persona {
 	 * @param fechanacimiento
 	 */
 	public void setFechanacimiento(String fechanacimiento) {
-		this.fechanacimiento = Date.valueOf(fechanacimiento);
+		this.fechanacimiento = fechanacimiento;
+		//this.fechanacimiento = Date.valueOf(fechanacimiento);
 	}
 	
 	/**

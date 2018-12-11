@@ -44,12 +44,11 @@ public class AgendaController {
 			return model;		
 		}
 		
-		@RequestMapping(value = "/update", method = RequestMethod.GET)
+		@RequestMapping(value = "/edit", method = RequestMethod.GET)
 		public ModelAndView editUser(HttpServletRequest request) {
 			logger.info("-- en EDIT");
 			int userId = Integer.parseInt(request.getParameter("id"));
 			Persona user = PersonaServicios.read(userId);
-			logger.info(user.toString());
 			ModelAndView model = new ModelAndView("UserForm");
 			model.addObject("user", user);
 			return model;		
@@ -59,6 +58,7 @@ public class AgendaController {
 		public ModelAndView deleteUser(HttpServletRequest request) {
 			logger.info("-- en DELETE");
 			int userId = Integer.parseInt(request.getParameter("id"));
+			logger.info("----------" + userId +"---------------------");
 			PersonaServicios.delete(userId);
 			return new ModelAndView("redirect:/");		
 		}
@@ -66,7 +66,6 @@ public class AgendaController {
 		@RequestMapping(value = "/save", method = RequestMethod.POST)
 		public ModelAndView saveUser(@ModelAttribute Persona user) {
 			logger.info("-- en SAVE");
-			logger.info(user.getFechanacimiento().toString());
 			PersonaServicios.add(user);
 			return new ModelAndView("redirect:/");
 		}

@@ -1,7 +1,6 @@
 package com.agenda.app.AgendaBasica.datos;
 
-import java.sql.Date;
-import java.time.LocalDate;
+
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -37,9 +36,11 @@ public class PersonaDAO implements IPersona {
 	 */
 	public void delete(int id) {
 
-		String hql = "DELETE Persona WHERE idpersona= '" + id + "'";
-
-		entityManager.createQuery(hql);
+		Persona person = this.read(id);
+		System.out.println("-------------------------------------------------------------------------------");
+		System.out.println("---------" + person.toString() + "-------");
+		System.out.println("-------------------------------------------------------------------------------");
+		entityManager.remove(person);
 
 	}
 	
@@ -49,10 +50,10 @@ public class PersonaDAO implements IPersona {
 	 */
 	public Persona read(int id) {
 
-		//return entityManager.find(Persona.class, id);
+		return entityManager.find(Persona.class, id);
 		
-		String hql = "FROM Persona WHERE idpersona='"+id+"'";
-		return (Persona) entityManager.createQuery(hql).getResultList().get(0);
+		//String hql = "FROM Persona WHERE idpersona="+id;
+		//return (Persona) entityManager.createQuery(hql).getResultList().get(0);
 	}
 
 	/**
@@ -61,14 +62,14 @@ public class PersonaDAO implements IPersona {
 	@Override
 	public void update(Persona persona) {
 
-		Persona person = read(persona.getIdpersona());// Para encontrar la persona por el nombre
+		Persona person = read(persona.getIdpersona());// Para encontrar la persona por el id
 
-		person.setNombre(persona.getNombre());
-		person.setApellido1(persona.getApellido1());
-		person.setApellido2(persona.getApellido2());
-		person.setDni(persona.getDni());
-		person.setFechanacimiento(persona.getFechanacimiento().toString());
-
+		persona.setNombre(persona.getNombre());
+		persona.setApellido1(persona.getApellido1());
+		persona.setApellido2(persona.getApellido2());
+		persona.setDni(persona.getDni());
+		persona.setFechanacimiento(persona.getFechanacimiento());
+		
 		entityManager.flush();
 	}
 	
