@@ -1,5 +1,6 @@
 package com.agenda.app.AgendaBasica.modelo;
 
+import java.sql.Date;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -40,7 +41,7 @@ public class Persona {
 	private String apellido2;
 	private String dni;
 	@DateTimeFormat(pattern = "yyyy.MM.dd")
-	private LocalDate fechanacimiento;
+	private Date fechanacimiento;
 	
 	@OneToMany( cascade = CascadeType.ALL, orphanRemoval = true)
 	    private List<Direccion> listDirecciones = new ArrayList<>();
@@ -67,14 +68,14 @@ public class Persona {
 	 * @param telefonos
 	 */
 	public Persona(int idpersona, String nombre, String apellido1, String apellido2, String dni,
-			LocalDate fechanacimiento/*, List<Direccion> direcciones, List<Telefono> telefonos*/) {
+			String fechanacimiento/*, List<Direccion> direcciones, List<Telefono> telefonos*/) {
 		super();
 		this.idpersona = idpersona;
 		this.nombre = nombre;
 		this.apellido1 = apellido1;
 		this.apellido2 = apellido2;
 		this.dni = dni;
-		this.fechanacimiento = fechanacimiento;
+		this.fechanacimiento = Date.valueOf(fechanacimiento);
 		//this.direcciones = direcciones;
 		//this.telefonos = telefonos;
 	}
@@ -166,7 +167,7 @@ public class Persona {
 	 * Método de acceso a la fecha de nacimiento
 	 * @return
 	 */
-	public LocalDate getFechanacimiento() {
+	public Date getFechanacimiento() {
 		return fechanacimiento;
 	}
 
@@ -174,8 +175,8 @@ public class Persona {
 	 * Método de acceso para modificar la fecha de nacimiento
 	 * @param fechanacimiento
 	 */
-	public void setFechanacimiento(LocalDate fechanacimiento) {
-		this.fechanacimiento = fechanacimiento;
+	public void setFechanacimiento(String fechanacimiento) {
+		this.fechanacimiento = Date.valueOf(fechanacimiento);
 	}
 	
 	/**

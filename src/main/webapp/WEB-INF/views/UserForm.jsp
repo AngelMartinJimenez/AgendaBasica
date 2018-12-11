@@ -21,16 +21,24 @@
 			<form:form action="save" method="post" modelAttribute="user">
 				<form:hidden path="idpersona" />
 				<tr>
-					<td>Usuario:</td>
-					<td><form:input path="id" /></td>
+					<td>Nombre:</td>
+					<td><form:input path="nombre"/></td>
 				</tr>
 				<tr>
-					<td>Email:</td>
-					<td><form:input path="nombre" /></td>
+					<td>Primer Apellido:</td>
+					<td><form:input path="apellido1"/></td>
 				</tr>
 				<tr>
-					<td>Password:</td>
-					<td><form:password path="password" /></td>
+					<td>Segundo Apellido:</td>
+					<td><form:input path="apellido2"/></td>
+				</tr>
+				<tr>
+					<td>DNI:</td>
+					<td><form:input path="dni"/></td>
+				</tr>
+				<tr>
+					<td>Fecha Nacimiento:</td>
+					<td><form:input path="fechanacimiento"/></td>
 				</tr>
 				<tr>
 					<td colspan="2" align="center"><input type="submit"
