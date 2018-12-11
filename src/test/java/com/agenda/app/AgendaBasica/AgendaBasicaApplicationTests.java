@@ -5,12 +5,14 @@ package com.agenda.app.AgendaBasica;
  */
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.containsString;
-import static org.junit.Assert.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import java.util.List;
+
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,16 +22,23 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
 import com.agenda.app.AgendaBasica.control.AgendaController;
+import com.agenda.app.AgendaBasica.datos.PersonaDAO;
+import com.agenda.app.AgendaBasica.modelo.Persona;
 
 /*
  * Autowired es interpretado por Spring. El controlador es inyectado antes de que se ejecute el metodo del test
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
+
+/*
+ * Pruebas unitarias de comprobación del controlador
+ */
 public class AgendaBasicaApplicationTests {
 
 	 @Autowired
 	private AgendaController controller;
+	 
 	 
 	@Test
 	
@@ -44,13 +53,30 @@ public class AgendaBasicaApplicationTests {
 
 	 @Test
 	    public void contextLoads() throws Exception {
-	    	//Deberia fallar
+	    	//Deberia fallar si pones True
 	    	assertThat(false).isFalse();
 	    }
+	 @Autowired
 	 
+	  private PersonaDAO personaDao;
 	 
+	 /*
+	  * Comprobamos que la lista de usuarios no es nula
+	  */
+	 @Test
+	 	
+	 public void listAll() {
+	        
+	        List<Persona> list = personaDao.listPersons();
+	        
+	        Assert.assertNotNull("Error listado", list);
 
-
+	        }
+	 /*
+	  * Prueba unitaria con mockito
+	  */
+	 
+ 
 	@RunWith(SpringRunner.class)
 	@WebMvcTest
 	public class ApplicationTest05_webLayer {
@@ -69,4 +95,5 @@ public class AgendaBasicaApplicationTests {
 	    }
 
 	}
+
 }
