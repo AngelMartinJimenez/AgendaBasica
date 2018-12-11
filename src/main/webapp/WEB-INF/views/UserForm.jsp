@@ -19,14 +19,14 @@
 		<h1>FORMULARIO DE USUARIOS (add/edit)</h1>
 		<table>
 			<form:form action="save" method="post" modelAttribute="user">
-				<form:hidden path="id" />
+				<form:hidden path="idpersona" />
 				<tr>
 					<td>Usuario:</td>
-					<td><form:input path="username" /></td>
+					<td><form:input path="id" /></td>
 				</tr>
 				<tr>
 					<td>Email:</td>
-					<td><form:input path="email" /></td>
+					<td><form:input path="nombre" /></td>
 				</tr>
 				<tr>
 					<td>Password:</td>

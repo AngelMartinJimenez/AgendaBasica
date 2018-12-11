@@ -6,7 +6,7 @@
 
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8" />
 
         <spring:url value="resources/css/bootstrap.css" var="bootstrap"/>
         <link href="${bootstrap}" rel="stylesheet" />
@@ -33,10 +33,10 @@
 			<c:forEach var="user" items="${userList}" varStatus="status">
 				<tr>
 					<td>${status.index + 1}</td>
-					<td>${user.username}</td>
-					<td>${user.email}</td>
-					<td><a href="edit?id=${user.id}">Modificar</a>
-						&nbsp;&nbsp;&nbsp;&nbsp; <a href="delete?id=${user.id}">Eliminar</a>
+					<td>${user.idpersona}</td>
+					<td>${user.nombre}</td>
+					<td><a href="edit?id=${user.idpersona}">Modificar</a>
+						&nbsp;&nbsp;&nbsp;&nbsp; <a href="delete?id=${user.idpersona}">Eliminar</a>
 					</td>
 				</tr>
 			</c:forEach>
