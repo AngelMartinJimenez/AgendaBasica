@@ -72,28 +72,6 @@ public class AgendaBasicaApplicationTests {
 	        Assert.assertNotNull("Error listado", list);
 
 	        }
-	 /*
-	  * Prueba unitaria con mockito
-	  */
 	 
- 
-	@RunWith(SpringRunner.class)
-	@WebMvcTest
-	public class ApplicationTest05_webLayer {
-
-
-	    @Autowired
-	    private MockMvc mockMvc;
-
-	    @Test
-	    public void webLayer() throws Exception {
-	        this.mockMvc
-	        .perform(get("/"))
-	        .andDo(print())
-	        .andExpect(status().isOk())
-	        .andExpect(content().string(containsString("Hello World")));
-	    }
-
-	}
 
 }
