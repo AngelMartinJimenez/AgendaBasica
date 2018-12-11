@@ -1,5 +1,11 @@
 package com.agenda.app.AgendaBasica.control;
 
+/*
+ * Construye el controlador de agenda basica para mvc
+ * 
+ * @author Ana 
+ * */
+
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -25,6 +31,7 @@ public class AgendaController {
 		private IPersonaS PersonaServicios;
 		
 		private static final Logger logger = LoggerFactory.getLogger(AgendaController.class);
+		
 
 		@RequestMapping("/")
 		public ModelAndView handleRequest() throws Exception {
