@@ -33,8 +33,8 @@
 			<c:forEach var="user" items="${userList}" varStatus="status">
 				<tr>
 					<td>${status.index + 1}</td>
-					<td>${user.username}</td>
-					<td>${user.email}</td>
+					<td>${user.idpersona}</td>
+					<td>${user.nombre}</td>
 					<td><a href="edit?id=${user.id}">Modificar</a>
 						&nbsp;&nbsp;&nbsp;&nbsp; <a href="delete?id=${user.id}">Eliminar</a>
 					</td>
