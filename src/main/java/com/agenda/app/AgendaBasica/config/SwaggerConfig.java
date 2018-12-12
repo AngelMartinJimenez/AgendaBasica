@@ -1,7 +1,7 @@
 package com.agenda.app.AgendaBasica.config;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
+
 
 import com.google.common.base.Predicate;
 
@@ -11,7 +11,7 @@ import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.spring.web.plugins.Docket;
 
 @EnableSwagger2
-@Configuration
+
 
 public class SwaggerConfig {
 	
