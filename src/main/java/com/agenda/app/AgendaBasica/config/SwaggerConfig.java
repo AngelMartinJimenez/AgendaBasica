@@ -2,6 +2,9 @@ package com.agenda.app.AgendaBasica.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import com.google.common.base.Predicate;
+
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -17,7 +20,12 @@ public class SwaggerConfig {
 		return new Docket(DocumentationType.SWAGGER_2)
 				.select()
 				.apis(RequestHandlerSelectors.basePackage("com.agenda.app.AgendaBasica"))
-				.paths(regex("/rest.*"))
+				.paths(regex("/contactos*"))
 				.build();
+	}
+
+	private Predicate<String> regex(String string) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
