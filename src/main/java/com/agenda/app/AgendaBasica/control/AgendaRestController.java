@@ -1,5 +1,7 @@
 package com.agenda.app.AgendaBasica.control;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -28,8 +30,11 @@ public class AgendaRestController {
 	
 
 	
+	
 	@Autowired
 	private IPersonaS personaServicios;
+	
+	private static final Logger logger = LoggerFactory.getLogger(AgendaRestController.class);
 	
 	/**
 	 * Metodo que añade una persona a la base de datos
@@ -51,9 +56,12 @@ public class AgendaRestController {
 	
 	@PutMapping(path = {"/{id}"})
     public Persona update(@PathVariable("id") int id, @RequestBody Persona persona){
-        persona.setIdpersona(id);
-        return personaServicios.updatePerson(persona);
+        //persona.setIdpersona(id);
+		logger.info("En Update");
+        return personaServicios.updatePerson(id,persona);
     }
+	
+	
 	
 	
 	
