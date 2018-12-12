@@ -27,7 +27,7 @@ public class PersonaDAO implements IPersona {
 	@Override
 	public void add(Persona person) {
 
-		entityManager.merge(person);
+		this.create(person);
 
 	}
 	
@@ -141,6 +141,12 @@ public class PersonaDAO implements IPersona {
 		String hql = "FROM Persona";
 		List<Persona>  lista= entityManager.createQuery(hql).getResultList();
 		return lista;
+	}
+
+	@Override
+	public Persona create(Persona persona) {
+		
+		return entityManager.merge(persona);
 	}
 
 }

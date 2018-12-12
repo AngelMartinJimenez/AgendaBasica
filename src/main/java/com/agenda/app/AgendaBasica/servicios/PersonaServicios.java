@@ -22,7 +22,6 @@ import com.agenda.app.AgendaBasica.modelo.Persona;
 public class PersonaServicios implements IPersonaS {
 	
 	@Autowired
-	
 	private IPersona PersonaDAO;
 	/**
 	 * Metodo para añadir una persona
@@ -112,6 +111,12 @@ public class PersonaServicios implements IPersonaS {
 	public List<Persona> listPersons() {
 		// TODO Auto-generated method stub
 		return PersonaDAO.listPersons();
+	}
+
+	@Override
+	public Persona create(Persona persona) {
+		
+		return PersonaDAO.create(persona);
 	}
 
 	

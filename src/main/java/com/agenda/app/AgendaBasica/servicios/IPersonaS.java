@@ -77,4 +77,6 @@ public interface IPersonaS {
 	 */
 	public List<Persona> listPersons();
 	
+	public Persona create(Persona persona);
+	
 }
