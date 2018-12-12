@@ -61,7 +61,7 @@ public class PersonaDAO implements IPersona {
 	/**
 	 * Método para actualizar la información de una persona en la BBDD
 	 */
-	@Override
+	
 	public void update(Persona persona) {
 
 		/*Persona person = read(persona.getIdpersona());// Para encontrar la persona por el id
@@ -74,7 +74,7 @@ public class PersonaDAO implements IPersona {
 		
 		entityManager.flush();*/
 		
-		this.updatePerson(persona);
+		//this.updatePerson(persona);
 	}
 	
 	/**
@@ -170,9 +170,9 @@ public class PersonaDAO implements IPersona {
 		
 	}
 	
-	public Persona updatePerson(Persona persona) {
+	public Persona updatePerson(int id, Persona persona) {
 
-		Persona person = read(persona.getIdpersona());// Para encontrar la persona por el id
+		Persona person = read(id);// Para encontrar la persona por el id
 
 		persona.setNombre(persona.getNombre());
 		persona.setApellido1(persona.getApellido1());
@@ -180,8 +180,8 @@ public class PersonaDAO implements IPersona {
 		persona.setDni(persona.getDni());
 		persona.setFechanacimiento(persona.getFechanacimiento());
 		
-		entityManager.flush();
-		return person;
+		entityManager.merge(persona);
+		return persona;
 	}
 
 }
