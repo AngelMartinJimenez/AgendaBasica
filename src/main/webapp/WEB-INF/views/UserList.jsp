@@ -43,6 +43,7 @@
 					<td>${user.fechanacimiento}</td>
 					<td><a href="edit?id=${user.idpersona}">Modificar</a>
 						&nbsp;&nbsp;|&nbsp;&nbsp;  <a href="delete?id=${user.idpersona}">Eliminar</a>
+						&nbsp;&nbsp;|&nbsp;&nbsp;<a href="ficha?id=${user.idpersona}">Ficha Tecnica</a>
 
 					</td>
 				</tr>

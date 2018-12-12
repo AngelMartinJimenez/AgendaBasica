@@ -76,6 +76,17 @@ public class AgendaController {
 			PersonaServicios.add(user);
 			return new ModelAndView("redirect:/");
 		}
+		
+		@RequestMapping("/ficha")
+        public ModelAndView fichaTecnica(HttpServletRequest request) {
+            logger.info("-- en Ficha Tecnica");       
+            int id = Integer.parseInt(request.getParameter("id"));
+            Persona persona = PersonaServicios.read(id);
+            logger.info("---");
+            ModelAndView model = new ModelAndView("FichaTecnica");
+            model.addObject("persona", persona);
+            return model;
+        }  
 
 		
 	}
