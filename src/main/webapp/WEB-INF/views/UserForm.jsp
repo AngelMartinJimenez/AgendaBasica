@@ -43,6 +43,8 @@
 				<tr>
 					<td colspan="2" align="center"><input type="submit"
 						value="Guardar Registro"></td>
+					<td colspan="2" align="center"><a href="/">Atrás</a></td>
+						
 				</tr>
 			</form:form>
 		</table>
