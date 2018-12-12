@@ -157,7 +157,7 @@ public class PersonaDAO implements IPersona {
 	 * @return devuelve el remove de person
 	 */
 	
-public Persona deletePerson(int id) {
+	public Persona deletePerson(int id) {
 		
 		Persona person = this.read(id);
 		System.out.println("-------------------------------------------------------------------------------");
