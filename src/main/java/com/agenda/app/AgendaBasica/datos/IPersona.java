@@ -81,5 +81,7 @@ public interface IPersona {
 	public List<Persona> listPersons();
 		
 	public Persona create(Persona persona);
+	
+	public Persona deletePerson(int id);
 
 }

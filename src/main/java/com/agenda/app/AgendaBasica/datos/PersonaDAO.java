@@ -32,15 +32,17 @@ public class PersonaDAO implements IPersona {
 	}
 	
 	/**
-	 * Método para borrar una persona de la BBDD
+	 * Método para borrar una persona de la BBDD. Llama al metodo de más abajo, que es el que contiene el entity manager
 	 */
 	public void delete(int id) {
 
-		Persona person = this.read(id);
+		/*Persona person = this.read(id);
 		System.out.println("-------------------------------------------------------------------------------");
 		System.out.println("---------" + person.toString() + "-------");
 		System.out.println("-------------------------------------------------------------------------------");
-		entityManager.remove(person);
+		entityManager.remove(person);*/
+		
+		this.deletePerson(id);
 
 	}
 	
@@ -147,6 +149,23 @@ public class PersonaDAO implements IPersona {
 	public Persona create(Persona persona) {
 		
 		return entityManager.merge(persona);
+	}
+	
+	/**
+	 * Creamos este método como intermediario para que nos devuelve un objeto de tipo persona y poder usarlo en servicio REST
+	 * @param id. Le pasamos el parametro Id para borrar al usuario
+	 * @return devuelve el remove de person
+	 */
+	
+public Persona deletePerson(int id) {
+		
+		Persona person = this.read(id);
+		System.out.println("-------------------------------------------------------------------------------");
+		System.out.println("---------" + person.toString() + "-------");
+		System.out.println("-------------------------------------------------------------------------------");
+		entityManager.remove(person);
+		return person;
+		
 	}
 
 }

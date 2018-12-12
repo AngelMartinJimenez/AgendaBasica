@@ -118,6 +118,11 @@ public class PersonaServicios implements IPersonaS {
 		
 		return PersonaDAO.create(persona);
 	}
+	
+	public Persona deletePerson(int id) {
+		
+		return PersonaDAO.deletePerson(id);
+	}
 
 	
 

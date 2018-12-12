@@ -79,4 +79,6 @@ public interface IPersonaS {
 	
 	public Persona create(Persona persona);
 	
+	public Persona deletePerson(int id);
+	
 }
