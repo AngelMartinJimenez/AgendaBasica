@@ -124,7 +124,10 @@ public class PersonaServicios implements IPersonaS {
 		return PersonaDAO.deletePerson(id);
 	}
 
-	
+	public Persona updatePerson(Persona persona) {
+		
+		return PersonaDAO.updatePerson(persona);
+	}
 
 
 

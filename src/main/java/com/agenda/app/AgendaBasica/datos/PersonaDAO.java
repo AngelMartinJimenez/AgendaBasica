@@ -64,7 +64,7 @@ public class PersonaDAO implements IPersona {
 	@Override
 	public void update(Persona persona) {
 
-		Persona person = read(persona.getIdpersona());// Para encontrar la persona por el id
+		/*Persona person = read(persona.getIdpersona());// Para encontrar la persona por el id
 
 		persona.setNombre(persona.getNombre());
 		persona.setApellido1(persona.getApellido1());
@@ -72,7 +72,9 @@ public class PersonaDAO implements IPersona {
 		persona.setDni(persona.getDni());
 		persona.setFechanacimiento(persona.getFechanacimiento());
 		
-		entityManager.flush();
+		entityManager.flush();*/
+		
+		this.updatePerson(persona);
 	}
 	
 	/**
@@ -166,6 +168,20 @@ public class PersonaDAO implements IPersona {
 		entityManager.remove(person);
 		return person;
 		
+	}
+	
+	public Persona updatePerson(Persona persona) {
+
+		Persona person = read(persona.getIdpersona());// Para encontrar la persona por el id
+
+		persona.setNombre(persona.getNombre());
+		persona.setApellido1(persona.getApellido1());
+		persona.setApellido2(persona.getApellido2());
+		persona.setDni(persona.getDni());
+		persona.setFechanacimiento(persona.getFechanacimiento());
+		
+		entityManager.flush();
+		return person;
 	}
 
 }
