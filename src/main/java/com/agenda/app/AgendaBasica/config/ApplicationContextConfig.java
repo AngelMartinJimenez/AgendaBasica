@@ -1,4 +1,4 @@
-package com.agenda.app.AgendaBasica.config;
+/*package com.agenda.app.AgendaBasica.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -30,4 +30,7 @@ public class ApplicationContextConfig {
      
    
 
-}
+}*/
+
+
+//no hace falta el spring boot lo hace el solo

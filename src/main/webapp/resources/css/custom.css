@@ -33,5 +33,32 @@
 }
 
 h1{
-	color:red;
+	color: #815555;
 }
+
+.campitos{
+	width: 25%;
+}
+
+.general{
+	 background: rgba(255,255, 255, 0.5);
+	 /*opacity: 0.4;*/
+}
+
+.botonsitos{
+	width: 25%;
+}
+
+.campform{
+	display: inline-block;
+}
+
+.card-body{
+	margin:0% 0%;
+}
+
+.contenedor{
+	  border-radius: 25px;
+	  padding: 2%;
+}
+

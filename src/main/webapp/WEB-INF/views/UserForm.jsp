@@ -7,48 +7,61 @@
 <head>
 <meta charset="UTF-8">
 
-        <spring:url value="resources/css/bootstrap.css" var="bootstrap"/>
-        <link href="${bootstrap}" rel="stylesheet" />
-        <spring:url value="resources/css/custom.css" var="custom"/>
-        <link href="${custom}" rel="stylesheet" />  
-        
+<spring:url value="resources/css/bootstrap.css" var="bootstrap" />
+<link href="${bootstrap}" rel="stylesheet" />
+<spring:url value="resources/css/custom.css" var="custom" />
+<link href="${custom}" rel="stylesheet" />
+
+<link rel="shortcut icon" href="/resources/favicon.ico"
+	type="image/x-icon">
+<link rel="icon" href="/resources/favicon.ico" type="image/x-icon">
+<link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+
 <title>FORMULARIO DE USUARIOS</title>
 </head>
 <body>
-	<div align="center">
+	<div align="center" class="general contenedor">
 		<h1>FORMULARIO DE USUARIOS (add/edit)</h1>
-		<table>
-			<form:form action="save" method="post" modelAttribute="user">
-				<form:hidden path="idpersona" />
-				<tr>
-					<td>Nombre:</td>
-					<td><form:input path="nombre"/></td>
-				</tr>
-				<tr>
-					<td>Primer Apellido:</td>
-					<td><form:input path="apellido1"/></td>
-				</tr>
-				<tr>
-					<td>Segundo Apellido:</td>
-					<td><form:input path="apellido2"/></td>
-				</tr>
-				<tr>
-					<td>DNI:</td>
-					<td><form:input path="dni"/></td>
-				</tr>
-				<tr>
-					<td>Fecha Nacimiento:</td>
-					<td><form:input path="fechanacimiento"/></td>
-				</tr>
-				<tr>
-					<td colspan="2" align="center"><input type="submit"
-						value="Guardar Registro"></td>
-					<td colspan="2" align="center"><a href="/">Atrás</a></td>
-						
-				</tr>
-			</form:form>
-		</table>
+		<form:form action="save" method="post" modelAttribute="user">
+			<form:hidden path="idpersona" />
+			<div class="form-group row campitos">
+				<label for="example-text-input" class="col-2 col-form-label">Nombre</label>
+				<div class="col-10">
+					<form:input class="form-control" type="text" id=""
+						path="nombre" />
+				</div>
+			</div>
+			<div class="form-group row campitos">
+				<label for="example-text-input" class="col-2 col-form-label">Primer
+					Apellido</label>
+				<div class="col-10">
+					<form:input class="form-control" type="text" id="" path="apellido1" />
+				</div>
+			</div>
+			<div class="form-group row campitos">
+				<label for="example-text-input" class="col-2 col-form-label">Segundo
+					Apellido</label>
+				<div class="col-10">
+					<form:input class="form-control" type="text" id="" path="apellido2" />
+				</div>
+			</div>
+			<div class="form-group row campitos">
+				<label for="example-text-input" class="col-2 col-form-label">DNI</label>
+				<div class="col-10">
+					<form:input class="form-control" type="text" id="" path="dni" />
+				</div>
+			</div>
+			<div class="form-group row campitos">
+				<label for="example-date-input" class="col-2 col-form-label">Fecha
+					de Nacimiento</label>
+				<div class="col-10">
+					<form:input class="form-control" type="date" id="" path="fechanacimiento" />
+				</div>
+			</div>
+			<button type="submit" class="btn btn-primary"
+				value="Guardar Registro">Guardar Registro</button>
+			<button type="button" onclick="window.location.href='/'" class="btn btn-secondary" >Atrás</button>
+		</form:form>
 	</div>
-
 </body>
 </html>
