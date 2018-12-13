@@ -16,7 +16,7 @@
 
 <link rel="shortcut icon" href="/resources/favicon.ico" type="image/x-icon">
 <link rel="icon" href="/resources/favicon.ico" type="image/x-icon">
-<link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
 
 
 <title>LISTADO DE USUARIOS</title>

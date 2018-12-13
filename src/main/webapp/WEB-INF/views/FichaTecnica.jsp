@@ -14,7 +14,7 @@
 <link href="${bootstrap}" rel="stylesheet" />
 <spring:url value="resources/css/custom.css" var="custom" />
 <link href="${custom}" rel="stylesheet" />
-<link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
 
 <link rel="shortcut icon" href="/resources/favicon.ico"
 	type="image/x-icon">
