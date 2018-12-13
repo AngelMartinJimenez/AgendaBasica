@@ -32,7 +32,11 @@ public class AgendaController {
 		
 		private static final Logger logger = LoggerFactory.getLogger(AgendaController.class);
 		
-
+		/**
+		 * Nos lleva a raiz el cual nos va a mostrar la lista de contactos
+		 * @return
+		 * @throws Exception
+		 */
 		@RequestMapping("/")
 		public ModelAndView handleRequest() throws Exception {
 			logger.info("-- en Listado ASR");		
@@ -43,6 +47,11 @@ public class AgendaController {
 			return model;
 		}	
 		
+		/**
+		 * Nos lleva a new cuando queremos añadir un nuevo contacto
+		 * @return
+		 */
+		
 		@RequestMapping(value = "/new", method = RequestMethod.GET)
 		public ModelAndView newUser() {
 			logger.info("-- en NEW");
@@ -50,6 +59,12 @@ public class AgendaController {
 			model.addObject("user", new Persona());
 			return model;		
 		}
+		
+		/**
+		 * Cuando queremos actualizar un usuario nos lleva a edit
+		 * @param request
+		 * @return
+		 */
 		
 		@RequestMapping(value = "/edit", method = RequestMethod.GET)
 		public ModelAndView editUser(HttpServletRequest request) {
@@ -61,6 +76,12 @@ public class AgendaController {
 			return model;		
 		}
 		
+		/**
+		 * Nos lleva a delete cuando queremos borrar un usuario
+		 * @param request
+		 * @return
+		 */
+		
 		@RequestMapping(value = "/delete", method = RequestMethod.GET)
 		public ModelAndView deleteUser(HttpServletRequest request) {
 			logger.info("-- en DELETE");
@@ -70,12 +91,24 @@ public class AgendaController {
 			return new ModelAndView("redirect:/");		
 		}
 		
+		/**
+		 * Hacemos save cuando añadimos un usuario y lo actualizamos
+		 * @param user
+		 * @return
+		 */
+		
 		@RequestMapping(value = "/save", method = RequestMethod.POST)
 		public ModelAndView saveUser(@ModelAttribute Persona user) {
 			logger.info("-- en SAVE");
 			PersonaServicios.add(user);
 			return new ModelAndView("redirect:/");
 		}
+		
+		/**
+		 * Cuando le damos a detalle de contacto nos lleva a ficha que es la ficha tecnica del mismo
+		 * @param request
+		 * @return
+		 */
 		
 		@RequestMapping("/ficha")
         public ModelAndView fichaTecnica(HttpServletRequest request) {

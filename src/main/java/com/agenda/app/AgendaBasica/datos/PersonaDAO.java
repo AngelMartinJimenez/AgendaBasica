@@ -146,7 +146,13 @@ public class PersonaDAO implements IPersona {
 		List<Persona>  lista= entityManager.createQuery(hql).getResultList();
 		return lista;
 	}
-
+	
+	/**
+	 * Creamos este método como intermediario para que nos devuelve un objeto de tipo persona y poder usarlo en servicio REST
+	 * @param id. Le pasamos el objeto persona para añadir al usuario
+	 * @return devuelve el create de person
+	 */
+	
 	@Override
 	public Persona create(Persona persona) {
 		
@@ -169,6 +175,11 @@ public class PersonaDAO implements IPersona {
 		return person;
 		
 	}
+	
+	/**
+	 * Metodo para actualizar contacto en metodo REST
+	 * @param id y persona
+	 */
 	
 	public Persona updatePerson(int id, Persona persona) {
 

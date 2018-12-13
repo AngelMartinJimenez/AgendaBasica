@@ -112,18 +112,30 @@ public class PersonaServicios implements IPersonaS {
 		// TODO Auto-generated method stub
 		return PersonaDAO.listPersons();
 	}
-
+	
+	/**
+	 * Metodo para crear una persona en servicio REST
+	 */
 	@Override
 	public Persona create(Persona persona) {
 		
 		return PersonaDAO.create(persona);
 	}
 	
+	/**
+	 * Metodo para borrar una persona en servicio REST
+	 */
+	@Override
 	public Persona deletePerson(int id) {
 		
 		return PersonaDAO.deletePerson(id);
 	}
-
+	
+	/**
+	 * Metodo para actualizar una persona en servicio REST
+	 */
+	
+	@Override
 	public Persona updatePerson(int id,Persona persona) {
 		
 		return PersonaDAO.updatePerson(id,persona);

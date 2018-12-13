@@ -53,11 +53,24 @@ public class AgendaRestController {
 		return personaServicios.create(persona);
 	}
 	
+	/**
+	 * Pasamos el id de la persona que queremos eliminar y llamamos al metodo de delete
+	 * @param id
+	 * @return
+	 */
+	
 	@DeleteMapping(path ={"/{id}"})
 	public Persona deletePerson(@PathVariable("id") int id) {
 		
 		return personaServicios.deletePerson(id);
 	}
+	
+	/**
+	 * Pasamos el id y el objeto persona y llamamos al metodo de actualizar para actualizar los datos de esa persona
+	 * @param id
+	 * @param persona
+	 * @return
+	 */
 	
 	@PutMapping(path = {"/{id}"})
     public Persona update(@PathVariable("id") int id, @RequestBody Persona persona){
@@ -66,10 +79,21 @@ public class AgendaRestController {
         return personaServicios.updatePerson(id,persona);
     }
 	
+	/**
+	 * Pasamos el id de la persona de la cual queremos hacer la consulta
+	 * @param id
+	 * @return
+	 */
+	
 	@GetMapping(path = {"/{id}"})
     public Persona readPerson(@PathVariable("id") int id){
         return personaServicios.read(id);
     }
+	
+	/**
+	 * Llamamos al metodo que nos va a proporcionar las lista de contactos general
+	 * @return
+	 */
 	
 	@GetMapping
     public List<Persona> findAll(){

@@ -15,7 +15,7 @@ public interface IPersona {
 	
 	
 	/**
-	 * Metodo leer usuario
+	 * Metodo leer usuario tanto en MVC como para REST
 	 * @param id
 	 * @return Persona
 	 */
@@ -75,14 +75,33 @@ public interface IPersona {
 	//public void updateBirthDay (int id,LocalDate localDate);
 	
 	/**
-	 * Metodo para listar todas las personas
+	 * Metodo para listar todas las personas. Nos sirve tanto para MVC como para REST
 	 * @return
 	 */
 	public List<Persona> listPersons();
+	
+	/**
+	 * Metodo por el cual añadimos la persona en el servicio REST
+	 * @param persona
+	 * @return
+	 */
 		
 	public Persona create(Persona persona);
 	
+	/**
+	 * Metodo por el cual borramos la persona en el servicio REST
+	 * @param id
+	 * @return
+	 */
+	
 	public Persona deletePerson(int id);
+	
+	/**
+	 * Metodo por el cual actualizamos la persona en el servicio REST
+	 * @param id
+	 * @param persona
+	 * @return
+	 */
 	
 	public Persona updatePerson(int id, Persona persona);
 
